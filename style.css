@@ -1,0 +1,170 @@
+/* تنسيقات عامة وخلفية احتفالية */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* يفضل استخدام Google Font هنا */
+    background: #0d0d1e; /* خلفية داكنة تناسب الألعاب النارية */
+    color: #ffffff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* ------------------ تصميم الباب ------------------ */
+#door-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1000; /* ليبقى فوق كل شيء */
+}
+
+.door {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(145deg, #1a1a2e, #0e111a); /* تصميم باب فاخر */
+    transition: transform 1.5s ease-in-out; /* حركة فتح الباب */
+    box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.4); /* ظل ذهبي خفيف */
+}
+
+#door-left.open {
+    transform: translateX(-100%); /* يفتح لليسار */
+}
+
+#door-right.open {
+    transform: translateX(100%); /* يفتح لليمين */
+}
+
+/* ------------------ تصميم الهدية التفاعلية ------------------ */
+#gift-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background-color: #ff4757; /* لون صندوق الهدية الأحمر */
+    cursor: pointer;
+    border: 5px solid #ffaa4c; /* إطار ذهبي */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+#gift-box:hover {
+    transform: translate(-50%, -50%) scale(1.05); /* تأثير عند المرور بالماوس */
+}
+
+#gift-box p {
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000;
+    font-size: 14px;
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+}
+
+.ribbon {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background-color: #ffd700; /* شريط ذهبي */
+    top: 60px;
+    left: 0;
+}
+
+.bow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #ffaa4c;
+}
+
+/* ------------------ المحتوى الرئيسي ------------------ */
+#main-content {
+    padding: 50px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 1s ease 1.5s; /* يظهر بعد فتح الباب */
+}
+
+.main-content.visible {
+    opacity: 1;
+}
+
+.celebration-text h1, .celebration-text h2 {
+    color: #ffd700; /* لون ذهبي للنصوص الاحتفالية */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.celebration-text h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+.celebration-text h2 {
+    font-size: 1.8em;
+    margin-top: 5px;
+}
+
+
+/* ------------------ صندوق الرسائل ------------------ */
+.contact-form {
+    max-width: 400px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ffd700;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0d0d1e;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    background-color: #00bcd4; /* أزرق سماوي جذاب */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0097a7;
+}
+
+/* ------------------ مكان الإعلان ------------------ */
+.ad-placeholder {
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed #ffd700;
+    color: #aaa;
+}
+
+/* ------------------ الألعاب النارية (Canvas) ------------------ */
+#fireworks-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* ليبقى في الخلفية */
+}
